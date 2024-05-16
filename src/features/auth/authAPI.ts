@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { UserLoginInfo, UserSignupInfo } from "./AuthSlice";
-const GRAPHQL_API_URL = "https://your-graphql-api-url.com/graphql";
+const GRAPHQL_API_URL = "http://127.0.0.1:8000/graphql";
 
 const client = new ApolloClient({
   uri: GRAPHQL_API_URL,
