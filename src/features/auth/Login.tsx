@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { UserLoginInfo, loginUser, signupUser } from "./AuthSlice";
 import Header from "../../components/Header";
-import Input from "../../components/Input"; // Assuming Input component is imported
+import Input from "../../components/Input"; 
 import { loginFields } from "../../constants/formFields";
 import { Field } from "../../types/types";
 import SubmitComponent from "../../components/SubmitComponent";
