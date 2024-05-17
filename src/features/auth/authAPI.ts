@@ -10,11 +10,18 @@ const client = new ApolloClient({
 
 const SIGNUP_MUTATION = gql`
   mutation SignupUser($userInfo: SignupInput!) {
-    signupUser(userInfo: $userInfo) {
-      id,
-      firstName,
-      lastName,
-      email
+    registerUser(userInfo: $userInfo) {
+     firstName,
+     lastName,
+     token
+    }
+  }
+`;
+
+const LOGIN_MUTATION = gql`
+  mutation loginUser($userInfo: SignupInput!) {
+    tokenAuth(userInfo: $userInfo) {
+      token
     }
   }
 `;
@@ -35,7 +42,7 @@ export const signupUserAPI = async (userInfo: UserSignupInfo) => {
 export const loginUserAPI = async (userInfo: UserLoginInfo) => {
   try {    
     const response = await client.mutate({
-      mutation: SIGNUP_MUTATION,
+      mutation: LOGIN_MUTATION,
       variables: { userInfo },
     });
     return response.data; 
